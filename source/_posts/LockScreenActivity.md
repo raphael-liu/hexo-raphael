@@ -117,7 +117,7 @@ Constant Value: "android.intent.action.SCREEN_OFF"
 	<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
 我们来看下锁屏时候的展示效果：
 
-![](/static/screenLockShot.jpg)
+![](/static/lockScreenShot.jpg)
 
 我们后期可以做一些扩展，比如屏蔽某些按键，增加滑屏解锁，这些就不在这赘述了。
 
