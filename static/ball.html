@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五百万</title>
+</head>
+<style>
+    div{
+        width:500px;
+        height:200px;
+        margin:200px auto;
+        border: 1px solid #cccccc;
+    };
+    ul{
+        width:300px;
+        margin:50px auto 30px;
+    };
+    ul::after{
+        display: block; 
+        height:0; 
+        clear:both; 
+        visibility: hidden;
+    };
+    li{
+        height:25px;
+        margin:0px 15px;
+        text-align:center;
+        font-size: 18px;
+        line-height: 25px;
+        float:left;
+        border: 1px solid #cccccc;
+    };
+    p{  
+        width:350px;
+        height:30px;
+        margin:10px auto;
+    };
+    button{
+        width:100px;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 18px;
+        font-family: "华文行楷","微软雅黑","宋体",serif ;
+    };
+</style>
+<body>
+    <div>
+        <ul>
+            <li style="width:160px;color:red;"></li>
+            <li style="width:20px;color:blue;"></li>
+        </ul>
+        <p>
+            <button onclick="wubaiwan()">随机选号</button>
+            <button onclick="wubaiwan1()">只选红球</button>
+            <button onclick="wubaiwan2()">只选蓝球</button>
+        </p>
+    </div>
+</body>
+<script>
+    var arr = new Array;
+    var liObj=document.getElementsByTagName('li')
+    function wubaiwan(){
+        num()
+        // 对数组内的数进行判断，如果没有重复的则输出，反之重新生成一组随机数，因为数组已经按照从从小到大进行排序，所以只需要比较前后两个数是否相同即可。
+        for(var i=0;i<arr.length;i++){ 
+            if (arr[i]!=arr[i+1]){
+                liObj[0].innerHTML=''+arr[0]+' '+arr[1]+' '+arr[2]+' '+arr[3]+' '+arr[4]+' '+arr[5];
+                liObj[1].innerHTML=g;
+            }else{
+                wubaiwan();
+            }
+        }
+    }
+    function wubaiwan1(){
+        num()
+        for(var i=0;i<arr.length;i++){ 
+            if (arr[i]!=arr[i+1]){
+                liObj[0].innerHTML=''+arr[0]+' '+arr[1]+' '+arr[2]+' '+arr[3]+' '+arr[4]+' '+arr[5];
+                liObj[1].innerHTML='';
+            }else{
+                wubaiwan1();
+            }
+        }
+    }
+    function wubaiwan2(){
+        var g = Math.floor(Math.random()*16+1);
+        liObj[0].innerHTML='';
+        liObj[1].innerHTML=g;
+    }
+    function num(){
+        // 生成6个随机数
+        for(var s=0;s<6;s++){
+            arr[s]=Math.floor(Math.random()*33+1);
+        };
+        // 生成1个特殊号码
+        g = Math.floor(Math.random()*16+1);
+        // 对数组内的数按从小到大进行排序
+        function sortNumber(a,b){
+            return a - b
+        }
+        arr=arr.sort(sortNumber);
+        // 以下为冒泡排序法，从小到大进行排序
+        // for (var i = 0; i < arr.length; i++){
+        //     for (var j = i; j < arr.length; j++){
+        //         if (arr[i] > arr[j]){
+        //             var temp = arr[i];
+        //             arr[i] = arr[j];
+        //             arr[j] = temp;
+        //         };
+        //      };
+        //  };
+    };
+</script>
+</html>
