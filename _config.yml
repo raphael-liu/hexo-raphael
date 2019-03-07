@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site	这下面的几项配置都很简单，你看我的博客就知道分别是什么意思
-title: Raphael’s Blog	#博客名
+title: Raphael Liu	#博客名
 subtitle: 格物致知	#副标题
-description: 刘仁斐 #用于搜索，没有直观表现
+description: 刘仁斐 Raphael Liu#用于搜索，没有直观表现
 author: Raphael Liu	#作者
 language: zh-CN	#语言
 timezone: 	#时区，此处不填写，hexo会以你目前电脑的时区为默认值
